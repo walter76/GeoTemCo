@@ -100,7 +100,8 @@ function PlacenamePopup(parent) {
 		this.inner.style.minWidth = "300px";
 		this.showDescription();
 		this.count = this.activeLabel.weight;
-		this.setCount();
+		this.setCount(this.activeLabel.place);
+
 		this.back.style.display = "inline-block";
 	}
 
@@ -131,12 +132,20 @@ function PlacenamePopup(parent) {
 		this.decorate();
 	}
 
-	this.setCount = function() {
+	this.setCount = function(place) {
 		var c = this.count;
 		if (c > 1) {
-			this.resultsLabel.innerHTML = c + " " + GeoTemConfig.getString('results');
+			if (place != undefined) {
+				this.resultsLabel.innerHTML = place + " (" + c + " " + GeoTemConfig.getString('results') + ")";
+			} else {
+				this.resultsLabel.innerHTML = c + " " + GeoTemConfig.getString('results');
+			}
 		} else {
-			this.resultsLabel.innerHTML = c + " " + GeoTemConfig.getString('result');
+			if (place != undefined) {
+				this.resultsLabel.innerHTML = place + " (" + c + " " + GeoTemConfig.getString('result') + ")";
+			} else {
+				this.resultsLabel.innerHTML = c + " " + GeoTemConfig.getString('result');
+			}
 		}
 	}
 
