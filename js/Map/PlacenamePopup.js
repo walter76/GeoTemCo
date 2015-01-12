@@ -38,7 +38,7 @@ function PlacenamePopup(parent) {
 		var onClose = function() {
 			parent.deselection();
 			pnPopup.reset();
-		}
+		};
 		popup.initialize(x, y, onClose);
 		$.extend(this, popup);
 
@@ -54,7 +54,7 @@ function PlacenamePopup(parent) {
 		this.backward.onclick = function() {
 			pnPopup.descriptionIndex--;
 			pnPopup.showDescription();
-		}
+		};
 
 		this.number = document.createElement("div");
 		this.content.appendChild(this.number);
@@ -67,7 +67,7 @@ function PlacenamePopup(parent) {
 		this.forward.onclick = function() {
 			pnPopup.descriptionIndex++;
 			pnPopup.showDescription();
-		}
+		};
 		if (parent.options.showDescriptions) {
 			this.descriptions = document.createElement("div");
 			this.descriptions.setAttribute('class', 'descriptions');
@@ -85,7 +85,7 @@ function PlacenamePopup(parent) {
 			pnPopup.forward.style.display = "none";
 			pnPopup.number.style.display = 'none';
 			pnPopup.showLabels();
-		}
+		};
 
 		this.content.appendChild(this.inner);
 		this.listLabels();
@@ -103,7 +103,7 @@ function PlacenamePopup(parent) {
 		this.setCount(this.activeLabel.place);
 
 		this.back.style.display = "inline-block";
-	}
+	};
 
 	this.showDescription = function() {
 		$(this.inner).empty();
@@ -130,7 +130,7 @@ function PlacenamePopup(parent) {
 			this.number.style.display = 'none';
 		}
 		this.decorate();
-	}
+	};
 
 	this.setCount = function(place) {
 		var c = this.count;
@@ -147,7 +147,7 @@ function PlacenamePopup(parent) {
 				this.resultsLabel.innerHTML = c + " " + GeoTemConfig.getString('result');
 			}
 		}
-	}
+	};
 
 	this.listLabels = function() {
 		var pnPopup = this;
@@ -182,7 +182,7 @@ function PlacenamePopup(parent) {
 		if ( typeof this.descriptions != 'undefined') {
 			this.labelsWidth += 20;
 		}
-	}
+	};
 
 	this.showLabels = function() {
 		$(this.inner).empty();
@@ -195,7 +195,7 @@ function PlacenamePopup(parent) {
 		this.inner.style.minWidth = this.labelsWidth + "px";
 		this.setContent(this.content);
 		this.decorate();
-	}
+	};
 
 	this.showLabelContent = function(label) {
 		for (var i = 0; i < this.labels.length; i++) {
@@ -208,7 +208,7 @@ function PlacenamePopup(parent) {
 				break;
 			}
 		}
-	}
+	};
 
 	this.setLanguage = function(language) {
 		this.language = language;
@@ -216,4 +216,4 @@ function PlacenamePopup(parent) {
 			this.updateTexts();
 		}
 	}
-};
+}
