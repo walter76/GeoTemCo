@@ -629,7 +629,11 @@ MapWidget.prototype = {
 			this.openlayersMap.addLayers([this.baseLayers[i]]);
 		}
 		if (this.options.alternativeMap) {
-			this.addBaseLayers([this.options.alternativeMap]);
+			if (this.options.alternativeMap instanceof Array) {
+				this.addBaseLayers(this.options.alternativeMap);
+			} else {
+				this.addBaseLayers([this.options.alternativeMap]);
+			}
 		}
 		this.setBaseLayerByName(this.options.baseLayer);
 	},
