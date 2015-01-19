@@ -125,7 +125,7 @@ function PlacenamePopup(parent) {
 			}
 		}
 		if (this.descriptionContents.length > 1) {
-			this.number.innerHTML = "#" + (this.descriptionIndex + 1);
+			this.number.innerHTML = '' + (this.descriptionIndex + 1);
 		} else {
 			this.number.style.display = 'none';
 		}
