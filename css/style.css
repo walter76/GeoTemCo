@@ -973,9 +973,9 @@ filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 
 .descriptions {	
     display: inline-block;
-    height: 20px;
-    width: 20px;
-    background-image: url(../images/descriptions.png);
+    height: 16px;
+    width: 16px;
+    background-image: url(../images/book_open.png);
     background-repeat: no-repeat;
     cursor: pointer;
 }
